@@ -16,21 +16,26 @@ The project structure follows standard Flutter conventions:
 To set up and run the application locally, follow these steps:
 
 1. **Clone the Repository:**
-   ```git clone https://github.com/Muckesh/bynry_assignment.git```
+
+   `git clone https://github.com/Muckesh/bynry_assignment.git`
 
 2. **Navigate to the Project Directory:**
-   cd bynry_assignment
+
+   `cd bynry_assignment`
 
 3. **Install Dependencies:**
-   flutter pub get
+
+   `flutter pub get`
 
 4. **Run the Application:**
-   flutter run
+
+   `flutter run`
 
 ## Testing
 
 To run the widget tests, use the following command:
-flutter test
+
+`flutter test`
 
 ## Features and Enhancements
 
@@ -50,4 +55,4 @@ Thank you!
 
 ---
 
-By [Muckesh K S]
+By Muckesh K S
