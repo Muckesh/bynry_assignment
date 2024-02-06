@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+class CustomTextField extends StatelessWidget {
+  final String text;
+  final Icon prefixIcon;
+  final IconButton? suffixIcon;
+  const CustomTextField({
+    super.key,
+    required this.text,
+    required this.prefixIcon,
+    this.suffixIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        border: const OutlineInputBorder(),
+        prefixIcon: prefixIcon,
+        hintText: text,
+        suffixIcon: suffixIcon,
+      ),
+    );
+  }
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/CustomTextField';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -13,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 248, 238, 255),
+      backgroundColor: const Color.fromARGB(255, 248, 238, 255),
       body: Stack(
         children: [
           Positioned(
@@ -22,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             right: 0,
             child: Container(
               height: 300,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10.0),
                   bottomRight: Radius.circular(10.0),
@@ -30,11 +31,11 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.deepPurpleAccent,
               ),
               child: Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 90,
                   left: 20,
                 ),
-                child: Column(
+                child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -43,6 +44,9 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white,
                         fontSize: 24.0,
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Text(
                       "Log in to your account",
@@ -59,12 +63,12 @@ class _LoginPageState extends State<LoginPage> {
           Positioned(
             top: 280,
             child: Container(
-              height: 380,
+              height: size.height * 0.37,
               width: size.width - 40,
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
-              padding: EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(18.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -78,36 +82,79 @@ class _LoginPageState extends State<LoginPage> {
               ),
               child: Column(
                 children: [
-                  TextField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(
-                          Icons.email_outlined,
-                        ),
-                        hintText: "Enter the Email ID"),
+                  const SizedBox(
+                    height: 10,
                   ),
-                  SizedBox(
+                  const CustomTextField(
+                    text: "Enter the Email ID",
+                    prefixIcon: Icon(Icons.email_outlined),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              _isVisible = !_isVisible;
-                            });
-                          },
-                          icon: _isVisible
-                              ? Icon(Icons.visibility)
-                              : Icon(Icons.visibility_off),
-                        ),
-                        prefixIcon: Icon(Icons.lock_outline),
-                        border: OutlineInputBorder(),
-                        hintText: "Password"),
+                  CustomTextField(
+                    text: "Password",
+                    prefixIcon: const Icon(
+                      Icons.lock_outline,
+                    ),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _isVisible = !_isVisible;
+                        });
+                      },
+                      icon: _isVisible
+                          ? const Icon(Icons.visibility)
+                          : const Icon(Icons.visibility_off),
+                    ),
                   ),
-                  Align(
-                    child: Text("Forgot Password"),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  MaterialButton(
+                    onPressed: () {},
+                    minWidth: double.infinity,
+                    color: Colors.deepOrange,
+                    child: const Text(
+                      "LOGIN",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   )
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: size.height * 0.75,
+            left: size.width * 0.25,
+            right: size.width * 0.25,
+            child: RichText(
+              text: TextSpan(
+                text: "Don\'t have an Account ? ",
+                style: TextStyle(
+                  color: Colors.grey.shade500,
+                ),
+                children: const [
+                  TextSpan(
+                    text: " Sign Up",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.deepPurple,
+                    ),
+                  ),
                 ],
               ),
             ),
