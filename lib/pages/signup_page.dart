@@ -1,16 +1,17 @@
+import 'package:bynry_assignment/widgets/CustomTextField';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../widgets/CustomTextField';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  bool _isVisible = false;
+class _SignupPageState extends State<SignupPage> {
+  bool _isVisible1 = false;
+  bool _isVisible2 = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -40,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Welcome Back!",
+                      "Register",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24.0,
@@ -50,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 10,
                     ),
                     Text(
-                      "Log in to your account",
+                      "Create your account",
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 16.0,
@@ -64,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
           Positioned(
             top: 280,
             child: Container(
-              height: size.height * 0.37,
+              height: size.height * 0.47,
               width: size.width - 40,
               margin: const EdgeInsets.symmetric(
                 horizontal: 20,
@@ -101,27 +102,46 @@ class _LoginPageState extends State<LoginPage> {
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          _isVisible = !_isVisible;
+                          _isVisible1 = !_isVisible1;
                         });
                       },
-                      icon: _isVisible
+                      icon: _isVisible1
                           ? const Icon(Icons.visibility)
                           : const Icon(Icons.visibility_off),
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
-                  const Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple,
-                      ),
+                  CustomTextField(
+                    text: "Confirm Password",
+                    prefixIcon: const Icon(
+                      Icons.lock_outline,
+                    ),
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          _isVisible2 = !_isVisible2;
+                        });
+                      },
+                      icon: _isVisible2
+                          ? const Icon(Icons.visibility)
+                          : const Icon(Icons.visibility_off),
                     ),
                   ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+                  // const Align(
+                  //   alignment: Alignment.centerRight,
+                  //   child: Text(
+                  //     "Forgot Password?",
+                  //     style: TextStyle(
+                  //       fontWeight: FontWeight.bold,
+                  //       color: Colors.deepPurple,
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 30,
                   ),
@@ -130,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     minWidth: double.infinity,
                     color: Colors.deepOrange,
                     child: const Text(
-                      "LOGIN",
+                      "SIGNUP",
                       style: TextStyle(color: Colors.white),
                     ),
                   )
@@ -139,12 +159,12 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Positioned(
-            top: size.height * 0.75,
+            top: size.height * 0.85,
             left: size.width * 0.25,
             right: size.width * 0.25,
             child: RichText(
               text: TextSpan(
-                text: "Don\'t have an Account ? ",
+                text: "Already have an Account ? ",
                 style: TextStyle(
                   color: Colors.grey.shade500,
                 ),
@@ -152,9 +172,10 @@ class _LoginPageState extends State<LoginPage> {
                   TextSpan(
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                        Navigator.pushNamed(context, '/signup_page');
+                        // Navigator.pushNamed(context, '/signup_page');
+                        Navigator.pop(context);
                       },
-                    text: " Sign Up",
+                    text: " Login",
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.deepPurple,

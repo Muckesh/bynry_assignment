@@ -1,4 +1,5 @@
 import 'package:bynry_assignment/pages/login_page.dart';
+import 'package:bynry_assignment/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,6 +35,10 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: const LoginPage(),
+      routes: {
+        '/signup_page': (context) => const SignupPage(),
+        '/login_page': (context) => const LoginPage(),
+      },
     );
   }
 }
