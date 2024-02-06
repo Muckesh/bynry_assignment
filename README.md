@@ -1,17 +1,53 @@
-# bynry_assignment
+# Bynry Mobile Application Enhancement
 
-A new Flutter project.
+This repository contains the updated codebase for the Bynry mobile application, implemented with enhancements and integration of a new feature. The application is developed using the Flutter framework, providing a seamless user experience for consumers of utility companies.
 
-## Getting Started
+## Project Structure
 
-This project is a starting point for a Flutter application.
+The project structure follows standard Flutter conventions:
 
-A few resources to get you started if this is your first Flutter project:
+- `lib`: Contains all Dart code files.
+- `pages`: Holds the UI pages of the application.
+- `widgets`: Reusable UI components used across different screens.
+- `test`: Holds widget tests for ensuring UI functionality.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Setup and Run Instructions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-"# bynry_assignment" 
+To set up and run the application locally, follow these steps:
+
+1. **Clone the Repository:**
+   git clone https://github.com/Muckesh/bynry_assignment.git
+
+2. **Navigate to the Project Directory:**
+   cd bynry_assignment
+
+3. **Install Dependencies:**
+   flutter pub get
+
+4. **Run the Application:**
+   flutter run
+
+## Testing
+
+To run the widget tests, use the following command:
+flutter test
+
+## Features and Enhancements
+
+### Login Screen Improvements
+
+- Enhanced the login screen to accommodate the new feature's authentication requirements.
+
+## Documentation
+
+For detailed documentation on the changes made to the application, the architecture of the new feature, and guidance for users to navigate the updated app, please refer to the provided documentation files.
+
+## Submission Details
+
+This repository serves as the submission for the Bynry mobile application enhancement assignment. It includes the updated Flutter project codebase, documentation, and necessary instructions for setting up, running, and testing the application.
+
+Thank you!
+
+---
+
+By [Muckesh K S]
