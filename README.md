@@ -47,6 +47,10 @@ To run the widget tests, use the following command:
 
 <img src="https://github.com/Muckesh/bynry_assignment/blob/main/assets/screenshots/Screenshot_1707225856.png" width=400 height=800 />
 
+
+<img src="https://github.com/Muckesh/bynry_assignment/blob/main/assets/screenshots/Screenshot_1707237475.png" width=400 height=800 />
+
+
 ## Documentation
 
 For detailed documentation on the changes made to the application, the architecture of the new feature, and guidance for users to navigate the updated app, please refer to the provided documentation files.
