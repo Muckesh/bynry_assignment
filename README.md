@@ -43,6 +43,9 @@ To run the widget tests, use the following command:
 
 - Enhanced the login screen to accommodate the new feature's authentication requirements.
 
+##Screenshot
+<img src="https://github.com/Muckesh/bynry_assignment/blob/main/assets/screenshots/Screenshot_1707225856.png" />
+
 ## Documentation
 
 For detailed documentation on the changes made to the application, the architecture of the new feature, and guidance for users to navigate the updated app, please refer to the provided documentation files.
